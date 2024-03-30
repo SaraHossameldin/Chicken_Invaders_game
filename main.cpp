@@ -7,64 +7,8 @@
 #include<QPixmap>
 #include<QKeyEvent>
 #include<QObject>
-
-
-//classes
-
-//creating the bullet
-class Bullet: public QObject,public QGraphicsPixmapItem
-{
-Q_OBJECT
-public:
-    Bullet()
-    {
-        setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\f635ea2c-827b-4f88-9a65-81b32ff6099d_Assignment 2 - Game (4).zip.99d\\red_laser.png").scaled(50, 50));
-
-    }
-};
-
-
-//create the player
-class Player: public QObject,public QGraphicsPixmapItem
-{
-    Q_OBJECT
-public:
-    //changed constructor
-    Player()
-    {
-        setPixmap(QPixmap("C:\\Users\\sarah\\Desktop\\images (1).jpeg").scaled(50, 50));
-    }
-public slots:
-    void keyPressEvent(QKeyEvent *event)
-    {
-        //arrows for navigating up and down and move the player
-        if(event->key()== Qt::Key_Right)
-        {
-            setPos(x()+10,y());
-        }
-        else if(event->key()== Qt::Key_Left)
-        {
-            setPos(x()-10,y());
-        }
-        else if(event->key()== Qt::Key_Up)
-        {
-            setPos(x(),y()-10);
-        }
-        else if(event->key()== Qt::Key_Down)
-        {
-            setPos(x(),y()+10);
-        }
-
-        //the spacebar to shoot laser
-        else if (event->key() ==Qt::Key_Space)
-        {
-            //show the laser we created above
-            Bullet bullet;
-            bullet.show();
-        }
-    }
-
-};
+#include<bullet.h>
+#include<player.h>
 
 int main(int argc, char *argv[])
 {
