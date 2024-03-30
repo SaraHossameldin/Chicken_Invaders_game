@@ -12,9 +12,9 @@
 //classes
 
 //creating the bullet
-class Bullet: public QGraphicsPixmapItem
+class Bullet: public QObject,public QGraphicsPixmapItem
 {
-
+Q_OBJECT
 public:
     Bullet()
     {
@@ -35,7 +35,7 @@ public:
         setPixmap(QPixmap("C:\\Users\\sarah\\Desktop\\images (1).jpeg").scaled(50, 50));
     }
 public slots:
-    void Player::keyPressEvent(QKeyEvent *event)
+    void keyPressEvent(QKeyEvent *event)
     {
         //arrows for navigating up and down and move the player
         if(event->key()== Qt::Key_Right)
@@ -59,8 +59,8 @@ public slots:
         else if (event->key() ==Qt::Key_Space)
         {
             //show the laser we created above
-            Bullet* bullet=new Bullet;
-            scene->addItem(bullet);
+            Bullet bullet;
+            bullet.show();
         }
     }
 
@@ -99,9 +99,9 @@ int main(int argc, char *argv[])
     scene.addItem(chicken);
 
     //object of type Player and make it focused
-    Player *player;
-    player->setFlag(QGraphicsPixmapItem::ItemIsFocusable );
-    player->setFocus();
+    Player player;
+    player.setFlag(QGraphicsPixmapItem::ItemIsFocusable );
+    player.setFocus();
 
     return a.exec();
 }
