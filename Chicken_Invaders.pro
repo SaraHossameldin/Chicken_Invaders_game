@@ -11,16 +11,13 @@ CONFIG += c++17
 SOURCES += \
     bullet.cpp \
     main.cpp \
-    mainwindow.cpp \
     player.cpp
 
 HEADERS += \
     bullet.h \
-    mainwindow.h \
     player.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

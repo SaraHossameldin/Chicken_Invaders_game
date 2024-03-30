@@ -2,6 +2,7 @@
 #include<bullet.h>
 #include<QPixmap>
 #include<QKeyEvent>
+#include<QGraphicsPixmapItem>
 
 Player::Player()
 {
@@ -32,6 +33,6 @@ void Player:: keyPressEvent(QKeyEvent *event)
     {
         //show the laser we created above
         bullet bullet1;
-        bullet.show();
+        bullet1.show();
     }
 }

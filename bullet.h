@@ -1,7 +1,8 @@
 #ifndef BULLET_H
 #define BULLET_H
+#include<QGraphicsPixmapItem>
 
-class bullet
+class bullet: public QGraphicsPixmapItem
 {
 public:
     bullet();

@@ -1,7 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
-class Player
+#include <QGraphicsPixmapItem>
+#include<QObject>
+#include<QKeyEvent>
+class Player: public QGraphicsPixmapItem
 {
 public:
     Player();
