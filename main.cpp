@@ -25,8 +25,9 @@ public:
 
 
 //create the player
-class Player: public QGraphicsPixmapItem
+class Player: public QObject,public QGraphicsPixmapItem
 {
+    Q_OBJECT
 public:
     //changed constructor
     Player()
